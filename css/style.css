@@ -16,7 +16,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 15px 60px;
+    padding: 15px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -26,23 +26,24 @@ header {
 }
 
 .logo img {
-    height: 60px;   /* ajuste ici la taille du logo */
+    height: 60px;
+    /* ajuste ici la taille du logo */
     width: auto;
 }
 
 /* Icône burger */
 .burger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
 }
 
 .burger span {
-  width: 28px;
-  height: 3px;
-  background: #fff;
-  border-radius: 3px;
+    width: 28px;
+    height: 3px;
+    background: #fff;
+    border-radius: 3px;
 }
 
 nav ul {
@@ -61,6 +62,11 @@ nav a {
 
 nav a:hover {
     text-decoration: underline;
+}
+
+header.scrolled {
+    background: rgba(255, 181, 95, 0.85); /* #ffb55f avec opacité */
+    transition: background 0.3s ease;
 }
 
 /* Section principale (hero) */
@@ -82,8 +88,10 @@ nav a:hover {
 
 .hero-content {
     max-width: 600px;
-    text-align: center; /* optionnel : centre le texte */
-    margin-top: 0; /* on supprime le décalage */
+    text-align: center;
+    /* optionnel : centre le texte */
+    margin-top: 0;
+    /* on supprime le décalage */
     /* pour compenser le header fixe */
 }
 
@@ -164,28 +172,76 @@ main {
     }
 }
 
+#backToTop {
+  position: fixed;
+  bottom: 20px;      /* distance du bas */
+  right: 20px;       /* distance du bord droit */
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 50%;
+  background-color: #FFB55F;
+  color: #000;
+  font-size: 22px;
+  cursor: pointer;
+  display: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 9999;     /* passe devant tout */
+}
+
+/* Affichage quand on scrolle */
+#backToTop.show {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* Menu mobile */
+/* --- HEADER MOBILE CORRIGÉ --- */
 @media (max-width: 768px) {
 
-  nav ul {
-    position: absolute;
-    top: 84px;
-    right: 0;
-    /* background: rgba(0,0,0,0.85); */
-    background: #ffb55f;
-    width: 220px;
-    flex-direction: column;
-    padding: 20px;
-    gap: 18px;
-    display: none;
-  }
+    /* Header plus compact mais logo conservé */
+    header {
+        padding: 10px 20px;
+        height: 70px; /* assez haut pour garder ton logo */
+        display: flex;
+        align-items: center;
+        background: rgba(255, 181, 95, 0.85); /* #ffb55f avec opacité */
+    }
 
-  nav ul.show {
-    display: flex;
-  }
+    /* Logo même taille qu’en desktop */
+    .logo img {
+        height: 60px;
+        width: auto;
+    }
 
-  .burger {
-    display: flex;
-    margin-left: auto;
-  }
+    /* Cache le menu horizontal */
+    /* nav {
+        display: none;
+    } */
+
+    /* Affiche le burger */
+    .burger {
+        display: flex;
+        margin-left: auto;
+    }
+
+    /* Menu mobile déroulant */
+    nav ul {
+        position: absolute;
+        top: 70px; /* EXACTEMENT la hauteur du header */
+        right: 0;
+        background: #ffb55f;
+        width: 220px;
+        flex-direction: column;
+        padding: 20px;
+        gap: 18px;
+        display: none;
+        z-index: 999;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
 }
