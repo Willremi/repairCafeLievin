@@ -289,14 +289,25 @@ main {
     }
 
     .apropos-logo {
-        width: 250px;
+        width: 200px;
         margin-bottom: 25px;
     }
     #apropos {
         /* width: 80%; */
         max-width: 360px;   /* évite que ça dépasse */
-        margin: 0 auto;     /* centre */
+        /* margin: 0 auto;     centre */
+        margin: 0 -32px;
     }
+
+    .apropos-texte p {
+    font-size: 16px;
+    margin-bottom: 18px;
+    line-height: 1.6;
+}
+
+.apropos-texte ul {
+    font-size: 16px;
+}
 
     /* .apropos-texte p,
     .apropos-texte ul {
