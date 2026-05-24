@@ -92,7 +92,7 @@ nav ul li .submenu {
     display: none;
     position: absolute;
     background: rgba(255, 181, 95, 0.95);
-    padding: 10px 0;
+    padding: 0;
     list-style: none;
     top: 100%;
     left: 0;
@@ -105,7 +105,19 @@ nav ul li .submenu {
 nav ul li .submenu li a {
     padding: 10px 15px;
     display: block;
-    color: #000;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+/* Séparateurs */
+nav ul li .submenu li {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li .submenu li:last-child {
+    border-bottom: none;
 }
 
 /* Desktop : ouverture au survol */
@@ -356,18 +368,19 @@ main {
         display: flex;
     }
 
-    @media (max-width: 768px) {
     nav ul li .submenu {
+        display: none;
         position: static;
         background: #ffb55f;
         box-shadow: none;
-        padding-left: 20px;
+        padding-left: 20px; /* OK */
+        padding-top: 0;     /* sécurité */
+        padding-bottom: 0;  /* sécurité */
     }
 
     nav ul li .submenu.show-submenu {
         display: flex;
     }
-}
 
     main {
         padding: 40px 20px 10px 20px;
