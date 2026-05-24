@@ -65,7 +65,8 @@ nav a:hover {
 }
 
 header.scrolled {
-    background: rgba(255, 181, 95, 0.85); /* #ffb55f avec opacité */
+    background: rgba(255, 181, 95, 0.85);
+    /* #ffb55f avec opacité */
     transition: background 0.3s ease;
 }
 
@@ -173,28 +174,30 @@ main {
 }
 
 #backToTop {
-  position: fixed;
-  bottom: 20px;      /* distance du bas */
-  right: 20px;       /* distance du bord droit */
-  width: 45px;
-  height: 45px;
-  border: none;
-  border-radius: 50%;
-  background-color: #FFB55F;
-  color: #000;
-  font-size: 22px;
-  cursor: pointer;
-  display: none;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  z-index: 9999;     /* passe devant tout */
+    position: fixed;
+    bottom: 50px; /* distance du bas */
+    right: 20px;
+    /* distance du bord droit */
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    background-color: #FFB55F;
+    color: #000;
+    font-size: 22px;
+    cursor: pointer;
+    display: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 9999;
+    /* passe devant tout */
 }
 
 /* Affichage quand on scrolle */
 #backToTop.show {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .apropos-section {
@@ -232,6 +235,22 @@ main {
     font-size: 18px;
 }
 
+#footer-fixe {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #ffb55f;
+    color: #000;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+    z-index: 9999;
+    box-shadow: 0 -3px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+
 /* Menu mobile */
 /* --- HEADER MOBILE CORRIGÉ --- */
 @media (max-width: 768px) {
@@ -239,10 +258,12 @@ main {
     /* Header plus compact mais logo conservé */
     header {
         padding: 10px 20px;
-        height: 70px; /* assez haut pour garder ton logo */
+        height: 70px;
+        /* assez haut pour garder ton logo */
         display: flex;
         align-items: center;
-        background: rgba(255, 181, 95, 0.85); /* #ffb55f avec opacité */
+        background: rgba(255, 181, 95, 0.85);
+        /* #ffb55f avec opacité */
     }
 
     /* Logo même taille qu’en desktop */
@@ -265,7 +286,8 @@ main {
     /* Menu mobile déroulant */
     nav ul {
         position: absolute;
-        top: 70px; /* EXACTEMENT la hauteur du header */
+        top: 70px;
+        /* EXACTEMENT la hauteur du header */
         right: 0;
         background: #ffb55f;
         width: 220px;
@@ -292,22 +314,24 @@ main {
         width: 200px;
         margin-bottom: 25px;
     }
+
     #apropos {
         /* width: 80%; */
-        max-width: 360px;   /* évite que ça dépasse */
+        max-width: 360px;
+        /* évite que ça dépasse */
         /* margin: 0 auto;     centre */
         margin: 0 -32px;
     }
 
     .apropos-texte p {
-    font-size: 16px;
-    margin-bottom: 18px;
-    line-height: 1.6;
-}
+        font-size: 16px;
+        margin-bottom: 18px;
+        line-height: 1.6;
+    }
 
-.apropos-texte ul {
-    font-size: 16px;
-}
+    .apropos-texte ul {
+        font-size: 16px;
+    }
 
     /* .apropos-texte p,
     .apropos-texte ul {
