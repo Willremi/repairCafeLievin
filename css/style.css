@@ -33,7 +33,8 @@ body.home header {
 
 /* Autres pages */
 body:not(.home) header {
-    background: #ffb55f; /* ou autre couleur */
+    background: #ffb55f;
+    /* ou autre couleur */
 }
 
 
@@ -80,6 +81,38 @@ header.scrolled {
     background: rgba(255, 181, 95, 0.85);
     /* #ffb55f avec opacité */
     transition: background 0.3s ease;
+}
+
+/* Sous-menu général */
+nav ul li.has-submenu {
+    position: relative;
+}
+
+nav ul li .submenu {
+    display: none;
+    position: absolute;
+    background: rgba(255, 181, 95, 0.95);
+    padding: 10px 0;
+    list-style: none;
+    top: 100%;
+    left: 0;
+    min-width: 180px;
+    flex-direction: column;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+}
+
+nav ul li .submenu li a {
+    padding: 10px 15px;
+    display: block;
+    color: #000;
+}
+
+/* Desktop : ouverture au survol */
+@media (min-width: 769px) {
+    nav ul li:hover .submenu {
+        display: flex;
+    }
 }
 
 /* Section principale (hero) */
@@ -187,7 +220,8 @@ main {
 
 #backToTop {
     position: fixed;
-    bottom: 50px; /* distance du bas */
+    bottom: 50px;
+    /* distance du bas */
     right: 20px;
     /* distance du bord droit */
     width: 45px;
@@ -321,6 +355,19 @@ main {
     nav ul.show {
         display: flex;
     }
+
+    @media (max-width: 768px) {
+    nav ul li .submenu {
+        position: static;
+        background: #ffb55f;
+        box-shadow: none;
+        padding-left: 20px;
+    }
+
+    nav ul li .submenu.show-submenu {
+        display: flex;
+    }
+}
 
     main {
         padding: 40px 20px 10px 20px;
