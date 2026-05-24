@@ -21,9 +21,21 @@ header {
     justify-content: space-between;
     align-items: center;
     z-index: 10;
-    /* background: rgba(0, 0, 0, 0.45); */
+    /* background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(4px); */
+}
+
+/* Page d’accueil */
+body.home header {
+    /* background: rgba(255, 181, 95, 0.85); */
     backdrop-filter: blur(4px);
 }
+
+/* Autres pages */
+body:not(.home) header {
+    background: #ffb55f; /* ou autre couleur */
+}
+
 
 .logo img {
     height: 60px;
@@ -233,6 +245,10 @@ main {
 .apropos-texte ul {
     margin: 10px 0 20px 20px;
     font-size: 18px;
+}
+
+#signature {
+    text-align: end;
 }
 
 #footer-fixe {
