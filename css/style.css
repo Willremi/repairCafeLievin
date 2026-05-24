@@ -247,6 +247,10 @@ main {
     font-size: 18px;
 }
 
+#genese {
+    margin-top: 2%;
+}
+
 #signature {
     text-align: end;
 }
@@ -318,6 +322,10 @@ main {
         display: flex;
     }
 
+    main {
+        padding: 40px 20px 10px 20px;
+    }
+
     .apropos-section {
         padding: 40px 20px;
     }
@@ -336,7 +344,7 @@ main {
         max-width: 360px;
         /* évite que ça dépasse */
         /* margin: 0 auto;     centre */
-        margin: 0 -32px;
+        /* margin: 0 -32px; */
     }
 
     .apropos-texte p {
