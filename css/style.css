@@ -314,6 +314,14 @@ main {
     font-size: 18px;
 }
 
+.map-container {
+    margin-top: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+
 #genese {
     margin-top: 2%;
 }
@@ -321,6 +329,23 @@ main {
 #signature {
     text-align: end;
 }
+
+#statutsAdresse {
+    text-align: center;
+}
+
+h3 {
+    color: #ff9b2f;
+    text-decoration: underline;
+    text-transform: uppercase;
+    text-underline-offset: 4px;
+    margin-bottom: 20px; 
+}
+
+h3 ~ p { 
+    text-indent: 25px; 
+}
+
 
 #footer-fixe {
     position: fixed;
