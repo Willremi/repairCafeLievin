@@ -346,6 +346,71 @@ h3 ~ p {
     text-indent: 25px; 
 }
 
+/* Formulaire de contact */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.contact-form label {
+    font-weight: bold;
+    color: #003366;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #ff9b2f;
+    outline: none;
+    box-shadow: 0 0 4px rgba(255, 155, 47, 0.4);
+}
+
+.contact-form button {
+    margin-top: 10px;
+    align-self: flex-start;
+}
+
+.form-status {
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.form-status.success {
+    color: #2ecc71; /* vert */
+}
+
+.form-status.error {
+    color: #e74c3c; /* rouge */
+}
+
+.loader {
+    display: none;
+    margin-top: 10px;
+    width: 28px;
+    height: 28px;
+    border: 4px solid #ff9b2f;
+    border-top: 4px solid transparent;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
 
 #footer-fixe {
     position: fixed;

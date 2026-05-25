@@ -76,3 +76,53 @@ window.addEventListener("scroll", () => {
         header.classList.toggle("scrolled", window.scrollY > 50);
     }
 });
+
+(function () {
+    emailjs.init("CkWCL3uOwKfTyRGkP");
+})();
+
+document.getElementById("contactForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    // Affiche le loader
+    document.getElementById("loader").style.display = "block";
+    document.getElementById("formStatus").style.opacity = "0";
+
+    const params = {
+        nom: document.getElementById("nom").value,
+        prenom: document.getElementById("prenom").value,
+        email: document.getElementById("email").value,
+        phone: document.getElementById("phone").value,
+        sujet: document.getElementById("sujet").value,
+        message: document.getElementById("message").value
+    };
+
+    emailjs.send("service_tonowqq", "template_1zi649q", params)
+        .then(function () {
+
+            // Cache le loader
+            document.getElementById("loader").style.display = "none";
+
+            // Message succès
+            const status = document.getElementById("formStatus");
+            status.innerText = "✔ Message envoyé avec succès !";
+            status.className = "form-status success";
+            status.style.opacity = "1";
+
+            // Reset du formulaire
+            document.getElementById("contactForm").reset();
+
+        }, function (error) {
+
+            // Cache le loader
+            document.getElementById("loader").style.display = "none";
+
+            // Message erreur
+            const status = document.getElementById("formStatus");
+            status.innerText = "✖ Erreur lors de l’envoi.";
+            status.className = "form-status error";
+            status.style.opacity = "1";
+
+            console.error("EmailJS error:", error);
+        });
+});
