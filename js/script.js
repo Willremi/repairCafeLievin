@@ -84,6 +84,12 @@ window.addEventListener("scroll", () => {
 document.getElementById("contactForm").addEventListener("submit", function (e) {
     e.preventDefault();
 
+    // HONEYPOT : si rempli → SPAM détecté → on bloque
+    if (document.getElementById("website").value !== "") {
+        console.warn("Spam détecté (honeypot rempli)");
+        return; // On arrête tout
+    }
+
     // Affiche le loader
     document.getElementById("loader").style.display = "block";
     document.getElementById("formStatus").style.opacity = "0";
