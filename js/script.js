@@ -47,13 +47,23 @@ document.querySelectorAll(".has-submenu > a").forEach(parentLink => {
             e.preventDefault();
 
             const submenu = parentLink.nextElementSibling;
+            const parentLi = parentLink.parentElement;
 
             // Fermer les autres sous-menus
             document.querySelectorAll(".submenu").forEach(sub => {
                 if (sub !== submenu) sub.classList.remove("show-submenu");
             });
 
+            // Fermer les autres flèches
+            document.querySelectorAll(".has-submenu").forEach(li => {
+                if (li !== parentLi) li.classList.remove("open");
+            });
+
+            // Toggle du sous-menu
             submenu.classList.toggle("show-submenu");
+
+            // Toggle de la flèche
+            parentLi.classList.toggle("open");
         }
     });
 });

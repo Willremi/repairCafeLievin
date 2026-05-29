@@ -120,6 +120,20 @@ nav ul li .submenu li:last-child {
     border-bottom: none;
 }
 
+/* .has-submenu>a::after {
+    content: " ▼";
+    font-size: 12px;
+    margin-left: 5px;
+} */
+ .has-submenu > a::after {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    content: "\f078"; /* icône chevron-down */
+    margin-left: 6px;
+    font-size: 12px;
+}
+
+
 /* Desktop : ouverture au survol */
 @media (min-width: 769px) {
     nav ul li:hover .submenu {
@@ -216,7 +230,8 @@ main {
 .faq-question {
     font-weight: bold;
     font-size: 20px;
-    color: #003366; /* bleu foncé */
+    color: #003366;
+    /* bleu foncé */
     margin-bottom: 6px;
 }
 
@@ -318,7 +333,7 @@ main {
     margin-top: 20px;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -339,11 +354,11 @@ h3 {
     text-decoration: underline;
     text-transform: uppercase;
     text-underline-offset: 4px;
-    margin-bottom: 20px; 
+    margin-bottom: 20px;
 }
 
-h3 ~ p { 
-    text-indent: 25px; 
+h3~p {
+    text-indent: 25px;
 }
 
 /* Formulaire de contact */
@@ -389,11 +404,13 @@ h3 ~ p {
 }
 
 .form-status.success {
-    color: #2ecc71; /* vert */
+    color: #2ecc71;
+    /* vert */
 }
 
 .form-status.error {
-    color: #e74c3c; /* rouge */
+    color: #e74c3c;
+    /* rouge */
 }
 
 .loader {
@@ -408,7 +425,9 @@ h3 ~ p {
 }
 
 @keyframes spin {
-    to { transform: rotate(360deg); }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 
@@ -484,13 +503,33 @@ h3 ~ p {
         position: static;
         background: #ffb55f;
         box-shadow: none;
-        padding-left: 20px; /* OK */
-        padding-top: 0;     /* sécurité */
-        padding-bottom: 0;  /* sécurité */
+        padding-left: 20px;
+        /* OK */
+        padding-top: 0;
+        /* sécurité */
+        padding-bottom: 0;
+        /* sécurité */
     }
 
     nav ul li .submenu.show-submenu {
         display: flex;
+    }
+
+    .has-submenu>a {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .has-submenu>a::after {
+        content: "▼";
+        font-size: 12px;
+        transition: transform 0.3s ease;
+    }
+
+    /* Quand le sous-menu est ouvert */
+    .has-submenu.open>a::after {
+        transform: rotate(180deg);
     }
 
     main {
